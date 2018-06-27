@@ -2,9 +2,6 @@
 
 @section('content')
     @foreach($alunos as $aluno)
-        @foreach($aluno->notas as $nota)
-            $value = 0;
-            @if ($loop->parent->first)
             <form class="form-control justify-content-center" method="POST" action="{{url("/prof/newNota/aluno")}}">
 
                     {{ csrf_field() }}
@@ -19,7 +16,7 @@
                         <div class="card-body">
 
 
-                                    <label>Primeira Nota: {{$nota->nota1}}</label>
+                                    <label>Primeira Nota:</label>
                                     <input type="number" name="notaone" class="form-control">
 
                                     <label>Segunda Nota: </label>
@@ -31,8 +28,7 @@
                             <button type="submit" class="btn btn-primary justify-content-end">Aplicar</button>
                         </div>+
             </form>
-            @endif
 @endforeach
-    @endforeach
+
 
 @endsection

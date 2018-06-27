@@ -17,9 +17,12 @@ class Nota extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'nota1', 'nota2','id_aluno', 'id_disciplina', 'teste'
+        'id', 'nota1', 'nota2','id_aluno', 'id_disciplina', 'id_professor', 'teste', 'falta'
     ];
 
     protected $table = 'notas';
+
+
+
 
 }

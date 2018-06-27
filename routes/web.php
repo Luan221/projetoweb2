@@ -67,7 +67,11 @@ Route::prefix('prof')->group(function() {
     Route::post('/login', 'Auth\ProfLoginController@login')->name('prof.login.submit');
     Route::get('/', 'ProfController@index')->name('prof.dashboard');
     Route::get('/{periodo}/listAlunos', 'ProfController@ListAlunos');
+    Route::get('/{id}/listFaltas', 'ProfController@ListFaltas');
     Route::get('/{periodo}/{id}/newNotas', 'ProfController@Notas');
     Route::post('/newNota/aluno', 'ProfController@newNotas');
+    Route::post('/lancarFalta', 'ProfController@LancarFalta');
+    Route::post('/lancarFalta2', 'ProfController@LancarFalta2');
+
 
 });

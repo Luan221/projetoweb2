@@ -4,6 +4,7 @@ use App\alunodisci;
 use App\disciplina;
 use App\Nota;
 use App\Professor;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,9 +17,11 @@ class ProfController extends Controller
      *
      * @return void
      */
+    private $Nota;
     public function __construct()
     {
         $this->middleware('auth:prof');
+        $this->Nota = new Nota();
     }
     /**
      * Show the application dashboard.
@@ -65,4 +68,49 @@ class ProfController extends Controller
         $list_alunos = DB::table('users')->where('periodo', $periodo)->get();
         return view('auth.aluno-newNotass', ['disciplinas' =>$this->disciplinaLecionada(), 'alunos'=>$list_alunos,'UserId'=> $UserId, 'disciplinaID' =>$id, 'notas'=>$notas]);
     }
+
+    //-------------------FALTAS ------------------------------------------
+    public function LancarFalta(Request $request)
+    {
+        $UserId = Auth::id();
+
+        $result = Nota::updateOrCreate(['id_aluno'=>$request->id_aluno, 'id_disciplina'=>$request->id_disciplina],
+            [   'id_aluno'=>$request->id_aluno,
+                'falta' => $request->falta,
+                'id_disciplina' => $request->id_disciplina,
+                'id_professor' => $request->id_professor]
+
+            );
+
+        return redirect('prof');
+    }
+
+    public function LancarFalta2(Request $request)
+    {
+        $result = Nota::find($request->id_nota)
+            ->update ([
+                'falta'=>$request->numero]
+            );
+
+        return redirect('prof');
+    }
+
+
+
+
+    public function Faltas ($periodo, $id){
+        $UserId = Auth::id();
+        $notas = Nota::all();
+        $list_alunos = DB::table('users')->where('periodo', $periodo)->get();
+        return view('auth.aluno-newNotass', ['disciplinas' =>$this->disciplinaLecionada(), 'alunos'=>$list_alunos,'UserId'=> $UserId, 'disciplinaID' =>$id, 'notas'=>$notas]);
+    }
+
+    public function ListFaltas($id){
+        $UserId = Auth::id();
+        $list_notas = DB::table('notas')->where(['id_professor'=> $UserId, 'id_disciplina'=>$id])->get();
+        $list_alunos = User::all();
+        $teste_disciplina = $id;
+        return view('auth.list-faltas', ['alunos'=>$list_alunos, 'disciplina' => $teste_disciplina, 'UserId' => $UserId, 'notas'=>$list_notas]);
+    }
+
 }
