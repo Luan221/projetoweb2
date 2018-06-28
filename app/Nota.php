@@ -22,7 +22,17 @@ class Nota extends Model
 
     protected $table = 'notas';
 
-
-
+    public function disci()
+    {
+        return $this->hasOne(disciplina::class, 'id', 'id_disciplina');
+    }
+    public function aluno()
+    {
+        return $this->hasOne('App\User', 'id_aluno');
+    }
+    public function professor()
+    {
+        return $this->hasOne('App\Professor', 'id_professor', 'id');
+    }
 
 }

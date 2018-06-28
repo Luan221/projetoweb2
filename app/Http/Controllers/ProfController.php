@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Mockery\Matcher\Not;
 
 
 class ProfController extends Controller
@@ -70,13 +71,22 @@ class ProfController extends Controller
     }
 
     //-------------------FALTAS ------------------------------------------
+
+    public function determinarPeriodo($x , $y){
+        $result = collect($x, $y)->sum();
+        return $result;
+
+    }
     public function LancarFalta(Request $request)
     {
         $UserId = Auth::id();
+        $list_notas = DB::table('notas')->where(['id_professor'=> $UserId, 'id_disciplina'=>$request->id_disciplina])->get();
+        $falta = $list_notas[0]->falta;
+        $soma = collect(1, $falta)->sum();
 
         $result = Nota::updateOrCreate(['id_aluno'=>$request->id_aluno, 'id_disciplina'=>$request->id_disciplina],
             [   'id_aluno'=>$request->id_aluno,
-                'falta' => $request->falta,
+                'falta' => $soma,
                 'id_disciplina' => $request->id_disciplina,
                 'id_professor' => $request->id_professor]
 

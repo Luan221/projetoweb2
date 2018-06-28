@@ -25,4 +25,6 @@ class disciplina extends Model
     ];
 
     protected $table = 'disciplina';
+
+
 }
