@@ -22,9 +22,9 @@
             @foreach ($notas as $nota)
                 <div class="card-body">
                     <p>Disciplina: <strong>{{ $nota->disci->nome }}</strong></p>
-                    <p>Nota 1: <strong>{{ $nota->nota1 }} </strong>// Nota 2: <strong>{{ $nota->nota2 }}</strong></p>
+                    <p>Nota 1: <strong>{{ $nota->nota1 }} </strong>  Nota 2: <strong>{{ $nota->nota2 }}</strong></p>
                     <p>Faltas: <strong>{{ $nota->falta }} </strong></p>
-                    <p>Reg <strong>{{ $nota->falta }} </strong></p>
+                    <p class="btn btn-primary">Registros das aulas</p>
                 </div>
                 @endforeach
             </div>

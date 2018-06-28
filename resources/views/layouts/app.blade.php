@@ -12,54 +12,67 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciência da Computação</title>
+<meta name="description" content="Curso de Ciencias da Computação">
+<meta name="keywords" content="ciencias da computação, facape,  ">
+<meta name="robots" content="index, follow">
+<meta name="author" content="">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="{{ URL::asset('bootstrap-css/bootstrap.css')}}">
+<link rel="stylesheet" href="{{ URL::asset('bootstrap-css/bootstrap-grid.css')}}">
+<link rel="stylesheet" href="{{ URL::asset('bootstrap-css/bootstrap-reboot.css')}}">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<!-- MY CSS-->
+<link rel="stylesheet" href="{{ URL::asset('css/style.css')}}">
+<link rel="stylesheet" href="{{ URL::asset('https://use.fontawesome.com/releases/v5.0.10/css/all.css')}}">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<!-- Icons-->
+<link rel="stylesheet" href="{{ URL::asset('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')}}">
 
-    <title>Hello, world!</title>
+<link rel="icon" href="{{ URL::asset('img/computacao-logo.png')}}">
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">Logo</a>
-
-    <!-- Links -->
-    <ul class="navbar-nav">
+<!-- NAVBAR -->
+<div class="head fixed-top">
+    <div class="logo-container">
+        <a href="index.html" title="Curso de Ciencia da Computação"> <h1 class="logo">Ciência da Computação</h1> </a>
+    </div>
+    <ul class="links nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8000/admin/1/instituition">Projetos extensão</a>
+            <a class="nav-link" href="#">Home</a>
         </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sobre o Curso
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Grade Curricular</a>
+                <a class="dropdown-item" href="#">Horários</a>
+                <a class="dropdown-item" href="#">Informações</a>
+                <a class="dropdown-item" href="#">Vestibular</a>
+            </div>
+        </li>
+
         <li class="nav-item">
             <a class="nav-link" href="#">Eventos</a>
         </li>
-
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                Dropdown link
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Link 1</a>
-                <a class="dropdown-item" href="#">Link 2</a>
-                <a class="dropdown-item" href="#">Link 3</a>
-            </div>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Projetos de Extensão</a>
         </li>
-    </ul>
     @guest
-    <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample08">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#"><span class="glyphicon glyphicon-user"></span> Portal do aluno</a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-    </div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Login
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/login">Aluno</a>
+                    <a class="dropdown-item" href="/prof">Professor</a>
+                    <a class="dropdown-item" href="/admin">Administrador</a>
+                </div>
+            </li>
         @else
         <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample08">
             <ul class="navbar-nav">
@@ -75,22 +88,53 @@
 
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
+    </ul>
+
+
                 </form>
-            </div>
-        </li>
+    @csrf
     @endguest
-</nav>
+</div>
+ <br> <!-- Espaços do topo -->
+    <br>
+    <br>
+<div>@yield('content')</div> <!--meio da pagina-->
+</body>
 
-<div>@yield('content')</div>
 
 
+<!-- FOOTER / RODAPÉ-->
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<div class="footer">
+    <div class="social">
+        <h4 class="social-item">Encontre-nos em:</h4>
+        <a href="http://www.facape.br" target="_blank" class="social-item"><img src="img/facape_logo.png" width="100" height="46" alt=""></a>
+        <a href="#" class="social-item"><i class="fab fa-facebook-square"></i></a>
+    </div>
+
+    <p class="copyright">
+        Copyright &copy; Ciência da Computação - Facape. Todos os direitos reservados.
+
+</div>
+
+<!-- JQUERY (não deu certo por enquanto) -->
+<!--
+<script src="js/Jquery.js"></script>
+-->
+<!-- BOOTSTRAP JS (não deu certo por enquanto) -->
+<!--
+<script src="bootstrap-js/bootstrap.js"></script>
+<script src="bootstrap-js/bootstrap.js.map"></script>
+<script src="bootstrap-js/bootstrap.bundle.js"></script>
+<script src="bootstrap-js/bootstrap.bundle.js.map"></script>
+ -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
+
+<!-- MY JS -->
+<script src="js/effects.js"></script>
 </body>
 </html>
 
