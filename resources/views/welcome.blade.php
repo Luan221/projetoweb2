@@ -133,4 +133,16 @@
 
 </main>
 
+<div class="footer">
+    <div class="social">
+        <h4 class="social-item">Encontre-nos em:</h4>
+        <a href="http://www.facape.br" target="_blank" class="social-item"><img src="img/facape_logo.png" width="100" height="46" alt=""></a>
+        <a href="#" class="social-item"><i class="fab fa-facebook-square"></i></a>
+    </div>
+
+    <p class="copyright">
+        Copyright &copy; Ciência da Computação - Facape. Todos os direitos reservados.
+
+</div>
+
 @endsection

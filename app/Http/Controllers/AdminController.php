@@ -13,6 +13,7 @@ use Hamcrest\Core\AllOf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Mockery\Matcher\Not;
 use function PhpParser\filesInDir;
 use Illuminate\Support\Facades\Hash;
 
@@ -78,7 +79,7 @@ class AdminController extends Controller
         $list_professores = Professor::all();
         $list_alunos = User::all();
         $list_disciplinas = disciplina::all();
-        return view('auth.account', ['professores' =>$list_professores, 'alunos' =>$list_alunos]);
+        return view('auth.account', ['professores' =>$list_professores, 'alunos' =>$list_alunos, 'disciplinas'=>$list_disciplinas]);
     }
 
     public function EditAccount($id){
@@ -102,6 +103,7 @@ class AdminController extends Controller
                 'periodo' => $request->periodo,
 
             ]);
+
         return redirect()->intended(route('admin.dashboard'));
     }
 
@@ -119,6 +121,22 @@ class AdminController extends Controller
         if ($aluno = User::find($request->id)) {
             $aluno->update($request->all());
             $aluno->update(['password'=>Hash::make($request->password)]);
+            Nota::create([
+                'id_aluno' => $request->id,
+                'id_disciplina' => $request->materiaone
+            ],[
+                'id_aluno' => $request->id,
+                'id_disciplina' => $request->materiatwo
+            ],[
+                'id_aluno' => $request->id,
+                'id_disciplina' => $request->materiatree
+            ],[
+                'id_aluno' => $request->id,
+                'id_disciplina' => $request->materiafour
+            ],[
+                'id_aluno' => $request->id,
+                'id_disciplina' => $request->materiafive
+            ] );
         }
         return redirect()->intended(route('admin.dashboard'));
     }

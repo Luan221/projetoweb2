@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}>
 <head>
-    <!-- Required meta tags -->
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,7 +41,7 @@
     </div>
     <ul class="links nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="/">Home</a>
         </li>
 
         <li class="nav-item dropdown">
@@ -101,17 +101,6 @@
 </body>
 
 
-<div class="footer">
-    <div class="social">
-        <h4 class="social-item">Encontre-nos em:</h4>
-        <a href="http://www.facape.br" target="_blank" class="social-item"><img src="img/facape_logo.png" width="100" height="46" alt=""></a>
-        <a href="#" class="social-item"><i class="fab fa-facebook-square"></i></a>
-    </div>
-
-    <p class="copyright">
-        Copyright &copy; Ciência da Computação - Facape. Todos os direitos reservados.
-
-</div>
 
 <!-- JQUERY (não deu certo por enquanto) -->
 <!--

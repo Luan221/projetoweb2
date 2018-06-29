@@ -28,7 +28,7 @@ class Nota extends Model
     }
     public function aluno()
     {
-        return $this->hasOne('App\User', 'id_aluno');
+        return $this->hasOne(User::class, 'id', 'id_aluno');
     }
     public function professor()
     {

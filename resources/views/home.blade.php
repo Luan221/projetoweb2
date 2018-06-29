@@ -24,7 +24,7 @@
                     <p>Disciplina: <strong>{{ $nota->disci->nome }}</strong></p>
                     <p>Nota 1: <strong>{{ $nota->nota1 }} </strong>  Nota 2: <strong>{{ $nota->nota2 }}</strong></p>
                     <p>Faltas: <strong>{{ $nota->falta }} </strong></p>
-                    <p class="btn btn-primary">Registros das aulas</p>
+                    <a class="btn btn-primary" href="/home/{{$nota->disci->id}}/listregistros">Registros das aulas</a>
                 </div>
                 @endforeach
             </div>

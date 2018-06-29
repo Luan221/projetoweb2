@@ -45,6 +45,48 @@
                 <input type="text" name="telefone" class="form-control" value="{{$account->telefone}}">
             </div>
         </div>
+            <div class="form-row">
+                <select name="materiaone" class="custom-select form-group col-md-6">
+                    <option selected>Selecione uma materia</option>
+                    @foreach($disciplinas as $disciplina)
+                        <option value="{{$disciplina->id}}">{{$disciplina->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-row">
+                <select name="materiatwo" class="custom-select form-group col-md-6">
+                    <option selected>Selecione uma materia</option>
+                    @foreach($disciplinas as $disciplina)
+                        <option  value="{{$disciplina->id}}">{{$disciplina->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-row">
+                <select name="materiatree" class="custom-select form-group col-md-6">
+                    <option selected>Selecione uma materia</option>
+                    @foreach($disciplinas as $disciplina)
+                        <option  value="{{$disciplina->id}}">{{$disciplina->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-row">
+                <select name="materiafour" class="custom-select form-group col-md-6">
+                    <option selected>Selecione uma materia</option>
+                    @foreach($disciplinas as $disciplina)
+                        <option  value="{{$disciplina->id}}">{{$disciplina->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-row">
+                <select name="materiafive"  class="custom-select form-group col-md-6">
+                    <option selected>Selecione uma materia</option>
+                    @foreach($disciplinas as $disciplina)
+                        <option value="{{$disciplina->id}}">{{$disciplina->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+
 
         @endforeach
         <button type="submit" class="btn btn-primary">Aplicar</button>
