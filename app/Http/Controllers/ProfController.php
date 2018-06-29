@@ -4,6 +4,7 @@ use App\alunodisci;
 use App\disciplina;
 use App\Nota;
 use App\Professor;
+use App\registro;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,8 +39,15 @@ class ProfController extends Controller
 
     public function disciplinaLecionada (){
         $userID = Auth::id();
-        return $list_disciplinas = DB::table('disciplina')->where('id_professor', $userID)->get();
+        return $list_disciplinas = disciplina::with('registro')->where('id_professor', $userID)->get();
 
+    }
+
+    public function ListRegistros($id)
+    {
+        $userID = Auth::id();
+        $disciplinas = registro::with('disciplina')->where('id_disciplina', $id)->get();
+        return view('auth.list-registros-prof', compact('disciplinas'), ['disciID'=>$id]);
     }
 
     public function ListAlunos($periodo){
@@ -47,6 +55,20 @@ class ProfController extends Controller
         $list_alunos = DB::table('users')->where('periodo', $periodo)->get();
         $list_notas = DB::table('notas')->where('id_disciplina', $periodo)->get();
         return view('auth.list-alunos', ['alunos'=>$list_alunos]);
+    }
+
+    public function newRegistro(Request $request)
+    {
+
+        $result = registro::create(
+            ['id_disciplina' => $request->id_disciplina,
+                'data' => $request->data,
+                'conteudo' => $request->conteudo,
+                'assuntos_min' => $request->assuntos_min,
+
+            ]);
+
+        return redirect('prof');
     }
 
     public function newNotas(Request $request)

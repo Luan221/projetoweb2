@@ -26,5 +26,8 @@ class disciplina extends Model
 
     protected $table = 'disciplina';
 
-
+    public function registro()
+    {
+        return $this->hasOne(registro::class, 'id', 'id');
+    }
 }

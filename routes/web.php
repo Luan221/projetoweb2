@@ -72,6 +72,8 @@ Route::prefix('prof')->group(function() {
     Route::post('/newNota/aluno', 'ProfController@newNotas');
     Route::post('/lancarFalta', 'ProfController@LancarFalta');
     Route::post('/lancarFalta2', 'ProfController@LancarFalta2');
+    Route::get('/{id}/listaregistros', 'ProfController@ListRegistros');
+    Route::post('/create/registro', 'ProfController@newRegistro');
 
 
 });
