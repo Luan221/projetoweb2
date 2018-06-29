@@ -112,7 +112,7 @@
 
     <!-- MAP -->
 
-    <div class="local-container">
+    <div class="local-container espace" >
         <div class="c-title">
             <h2>Fale Conosco</h2>
         </div>

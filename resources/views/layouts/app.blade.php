@@ -37,7 +37,7 @@
 <!-- NAVBAR -->
 <div class="head fixed-top">
     <div class="logo-container">
-        <a href="index.html" title="Curso de Ciencia da Computação"> <h1 class="logo">Ciência da Computação</h1> </a>
+        <a href="/" title="Curso de Ciencia da Computação"> <h1 class="logo">Ciência da Computação</h1> </a>
     </div>
     <ul class="links nav justify-content-end">
         <li class="nav-item">
@@ -63,6 +63,7 @@
             <a class="nav-link" href="#">Projetos de Extensão</a>
         </li>
     @guest
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Login
@@ -73,26 +74,24 @@
                     <a class="dropdown-item" href="/admin">Administrador</a>
                 </div>
             </li>
+
         @else
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample08">
-            <ul class="navbar-nav">
+
                 <li class="nav-item"><a class="nav-link disabled" href="#"><span class="glyphicon glyphicon-user"></span>{{ Auth::user()->name }}</a></li>
 
                 <li class="nav-item"><a class="nav-link"  href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                        <span class="glyphicon glyphicon-user"></span> {{ __('Logout') }}
+                        <span class="glyphicon glyphicon-user"></span> {{ __('Sair') }}
                     </a></li>
-            </ul>
-        </div>
 
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
     </ul>
 
 
-                </form>
-    @csrf
     @endguest
 </div>
  <br> <!-- Espaços do topo -->
@@ -101,9 +100,6 @@
 <div>@yield('content')</div> <!--meio da pagina-->
 </body>
 
-
-
-<!-- FOOTER / RODAPÉ-->
 
 <div class="footer">
     <div class="social">
@@ -135,6 +131,5 @@
 
 <!-- MY JS -->
 <script src="js/effects.js"></script>
-</body>
 </html>
 
