@@ -28,7 +28,6 @@
                                 <td>{{$disciplina->nome}}</td>
                                 <td><a class="btn btn-primary" href="{{url("/prof/$disciplina->periodo/listAlunos")}}">Lista</a></td>
                                 <td><a class="btn btn-primary" href="{{url("/prof/$disciplina->periodo/$disciplina->id/newNotas")}}">Lançar Notas</a></td>
-                                <td><a class="btn btn-primary" href="{{url("/prof/$disciplina->periodo/alterNotas")}}">Alterar Notas</a></td>
                                 <td><a class="btn btn-primary" href="{{url("/prof/$disciplina->id/listFaltas")}}">Lançar Faltas</a></td>
                                 <td><a class="btn btn-primary" href="{{url("/prof/$disciplina->id/listaregistros")}}">Registro de Aula</a></td>
 

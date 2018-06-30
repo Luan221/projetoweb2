@@ -15,6 +15,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/eventos', 'VisitanteController@eventos');
+Route::get('/info', 'VisitanteController@info');
+Route::get('/projetos', 'VisitanteController@projeto');
+
+
 Route::get('/home/{id}/listregistros', 'HomeController@ListRegistros');
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
