@@ -47,8 +47,8 @@
                 <div class="card">
                     <img class="card-img-top" src="img/card-1.png" alt="Card image">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title">Título exemplo</h5>
+                        <p class="card-text">texto exemplo.</p>
                     </div>
                     <div class="card-footer btn" href="#">
                         <p>Saiba Mais</p>
@@ -57,8 +57,8 @@
                 <div class="card">
                     <img class="card-img-top" src="img/card-2.jpg" alt="Card image">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">Título exemplo</h5>
+                        <p class="card-text">texto exemplo.</p>
                     </div>
                     <div class="card-footer btn" href="#">
                         <p>Saiba Mais</p>
@@ -67,8 +67,8 @@
                 <div class="card">
                     <img class="card-img-top" src="img/card-3.png" alt="Card image">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <h5 class="card-title">Título exemplo</h5>
+                        <p class="card-text"> texto exemplo</p>
                     </div>
                     <div class="card-footer btn" href="#">
                         <p>Saiba Mais</p>
@@ -81,8 +81,8 @@
                 <div class="card">
                     <img class="card-img-top" src="img/card-4.png" alt="Card image">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title">Título exemplo</h5>
+                        <p class="card-text">texto exemplo.</p>
                     </div>
                     <div class="card-footer btn" href="#">
                         <p>Saiba Mais</p>
@@ -91,8 +91,8 @@
                 <div class="card">
                     <img class="card-img-top" src="img/card-5.jpg" alt="Card image">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">Título exemplo</h5>
+                        <p class="card-text">texto exemplo.</p>
                     </div>
                     <div class="card-footer btn" href="#">
                         <p>Saiba Mais</p>
@@ -101,8 +101,8 @@
                 <div class="card">
                     <img class="card-img-top" src="img/card-6.jpg" alt="Card image">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <h5 class="card-title">Título exemplo</h5>
+                        <p class="card-text">texto exemplo.</p>
                     </div>
                     <div class="card-footer btn" href="#">
                         <p>Saiba Mais</p>
