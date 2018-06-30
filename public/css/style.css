@@ -4,8 +4,7 @@
 
 }
 body {
-    height:100%;
-    padding-top: 2%;
+
 }
 
 a {
@@ -87,7 +86,7 @@ img {
 }
 
 .card-footer:hover {
-    background-color:  #051046;
+    background-color:  #051046; /* #007bff */
     color: white;
 }
 
@@ -98,17 +97,19 @@ img {
 
 /* LOCALIZATION */
 
-.local-container {
+.local-container {   /* OLHAR COM ATENÇÃO */
     width: 100%;;
-    height:450px;
+    height:500px;
     background-color: #cae1ff;
-    padding: 25px 0 25px 0;
+    margin-top: 2%;
 }
 
 .map {
     width:70%;
     height:400px;
     float: left;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .phone {
@@ -116,6 +117,8 @@ img {
     height:400px;
     float: right;
     text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 /* FOOTER */
@@ -123,8 +126,9 @@ img {
 .footer {
     width: 100%;
     height: 120px;
+    position: absolute;
+
     background-color: #051046;
-    bottom: 0;
 }
 
 .social {
@@ -143,7 +147,6 @@ img {
     margin-left: 6%;
 }
 
-
 .social-item:first-child {
     margin-left: 15%;
 }
@@ -160,60 +163,96 @@ img {
     text-align: center;
 }
 
-/* -------- OTHER PAGES --------*/
+/* LOGIN PAGE*/
 
-.event-title {
-    float: left;
-    margin-right: 2%;
-}
-
-.j-img-container {
-    width: 100%;
-    height: 410px;
-}
-
-.jumbotron-img {
-    width:80%;
-    height:400px;
-    margin: 5px 10%;
+.login {
+    padding-top: 5%;
+    top: 50%;
+    padding-bottom: 19.5%;
 
 }
 
-.jumbotron-container h4{
-    width: 100%;
-    padding: 1%;
+
+body {
+
+    background-color: #eee;
+
 }
 
-.jumbotron-txt-container {
-    width: 100%;
-    height: 250px;
-    overflow: scroll;
+.espace {
+    margin: 5px;
 }
-
-.jumbotron-txt-container p {
-    font-size: 20px;
-    margin: 2%;
+.btn
+{
+    outline:0;
+    border:none;
+    border-top:none;
+    border-bottom:none;
+    border-left:none;
+    border-right:none;
+    box-shadow:inset 2px -3px rgba(0,0,0,0.15);
 }
-
-/* SCROLL CUSTOM */
-
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
+.btn:focus
+{
+    outline:0;
+    -webkit-outline:0;
+    -moz-outline:0;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('http://cleancanvas.herokuapp.com/img/backgrounds/color-splash.jpg');
+    background-repeat:repeat;
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
+.form-signin {
+    max-width: 280px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top:50px;
 }
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.form-signin .form-signin-heading, .form-signin {
+    margin-bottom: 10px;
 }
-
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-color: #000;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: rgb(0,0,0);
+    border-top:1px solid rgba(0,0,0,0.08);
+}
+.form-signin-heading {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+}
